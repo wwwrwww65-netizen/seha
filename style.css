@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Readex Pro', sans-serif;
+    background: radial-gradient(circle at center, #f0f8ff 0%, #e6f2ff 100%);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* Header */
+.header {
+    border-bottom: 1px solid #eaeaea;
+}
+.menu-icon {
+    color: #337ab7;
+    cursor: pointer;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 50px 15px;
+}
+.hero-section {
+    margin-bottom: 30px;
+}
+.hero-title {
+    font-size: 2.2rem;
+    color: #337ab7;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.hero-desc {
+    font-size: 1.1rem;
+    color: #6c757d;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Form */
+.form-wrapper {
+    max-width: 450px;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+}
+.form-control {
+    border-radius: 6px;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+}
+.form-control:focus {
+    border-color: #337ab7;
+    box-shadow: 0 0 0 0.2rem rgba(51, 122, 183, 0.25);
+}
+
+/* Buttons */
+.btn-custom {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.btn-primary {
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+.btn-primary:hover {
+    background-color: #286090;
+    border-color: #204d74;
+}
+.btn-outline-primary {
+    color: #337ab7;
+    border-color: #337ab7;
+}
+.btn-outline-primary:hover {
+    background-color: #f0f8ff;
+    color: #286090;
+}
+
+/* Footer */
+.footer {
+    background-color: #337ab7;
+    padding: 30px 15px;
+    color: #fff;
+}
+.footer-text {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    .hero-desc {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+    .form-wrapper {
+        padding: 20px !important;
+    }
+}
