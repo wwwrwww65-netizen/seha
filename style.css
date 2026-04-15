@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
 
 body {
-    font-family: 'Readex Pro', sans-serif;
-    background: radial-gradient(circle at center, #f0f8ff 0%, #e6f2ff 100%);
+    /* Falling back to Tajawal as it closely resembles Neo Sans Arabic */
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f6f9fc;
+    box-shadow: inset 15px 0 80px rgba(51, 122, 183, 0.15), inset -15px 0 80px rgba(51, 122, 183, 0.15);
     color: #333;
     min-height: 100vh;
     display: flex;
@@ -12,102 +14,104 @@ body {
 
 /* Header */
 .header {
-    border-bottom: 1px solid #eaeaea;
-}
-.menu-icon {
-    color: #337ab7;
-    cursor: pointer;
+    border-bottom: 2px solid #f0f0f0;
 }
 
 /* Main Content */
 .main-content {
     flex: 1;
     display: flex;
-    align-items: center;
-    padding: 50px 15px;
+    align-items: flex-start;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
+
 .hero-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
+
 .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     color: #337ab7;
-    font-weight: 600;
-    margin-bottom: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
+
 .hero-desc {
-    font-size: 1.1rem;
-    color: #6c757d;
-    max-width: 80%;
+    font-size: 1.05rem;
+    color: #6a7c92;
+    max-width: 90%;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* Form */
 .form-wrapper {
-    max-width: 450px;
+    max-width: 480px;
     margin: 0 auto;
-    border: 1px solid #e0e0e0;
 }
-.form-control {
-    border-radius: 6px;
+
+.custom-input {
+    border-radius: 4px;
     padding: 12px 15px;
     border: 1px solid #ced4da;
-    font-size: 1rem;
+    font-size: 1.05rem;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);
+    text-align: right; /* Aligned right based on Arabic input standard */
+    background-color: #fafafa;
 }
-.form-control:focus {
+
+.custom-input::placeholder {
+    color: #666;
+}
+
+.custom-input:focus {
     border-color: #337ab7;
+    background-color: #fff;
     box-shadow: 0 0 0 0.2rem rgba(51, 122, 183, 0.25);
+    outline: none;
 }
 
 /* Buttons */
 .btn-custom {
-    padding: 12px 20px;
+    width: 250px;
+    max-width: 100%;
+    padding: 10px 15px;
     font-size: 1.1rem;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-.btn-primary {
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
     background-color: #337ab7;
     border-color: #337ab7;
+    color: #fff;
 }
-.btn-primary:hover {
+
+.btn-custom:hover {
     background-color: #286090;
     border-color: #204d74;
-}
-.btn-outline-primary {
-    color: #337ab7;
-    border-color: #337ab7;
-}
-.btn-outline-primary:hover {
-    background-color: #f0f8ff;
-    color: #286090;
 }
 
 /* Footer */
 .footer {
     background-color: #337ab7;
-    padding: 30px 15px;
+    padding: 40px 15px;
     color: #fff;
 }
+
 .footer-text {
-    font-size: 0.95rem;
+    font-size: 1rem;
     opacity: 0.9;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
+    .btn-custom {
+        width: 100%;
+    }
     .hero-title {
         font-size: 1.8rem;
-    }
-    .hero-desc {
-        max-width: 100%;
-        font-size: 1rem;
-    }
-    .form-wrapper {
-        padding: 20px !important;
     }
 }

@@ -10,40 +10,38 @@
 <body>
 
     <!-- Header -->
-    <header class="header shadow-sm bg-white">
+    <header class="header bg-white">
         <div class="container-fluid d-flex justify-content-between align-items-center py-2 px-3 px-md-5">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/ar/thumb/a/a2/Seha_Platform_Logo.png/320px-Seha_Platform_Logo.png" alt="صحة" height="45">
+            </div>
             <div class="menu-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#337ab7" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                 </svg>
-            </div>
-            <div class="logo">
-                <img src="https://seha.sa/assets/images/logo.svg" alt="صحة" height="50" onerror="this.src='https://upload.wikimedia.org/wikipedia/ar/thumb/a/a2/Seha_Platform_Logo.png/800px-Seha_Platform_Logo.png'; this.height=50;">
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="container">
-            <div class="hero-section text-center">
-                <h1 class="hero-title">الاستعلام عن الإجازات المرضية</h1>
-                <p class="hero-desc">يرجى إدخال رمز الخدمة ورقم الهوية أو الإقامة للاستعلام عن حالة الإجازة المرضية.</p>
+        <div class="container" style="max-width: 600px;">
+            <div class="hero-section text-center mt-3">
+                <h1 class="hero-title">الإجازات المرضية</h1>
+                <p class="hero-desc">خدمة الاستعلام عن الإجازات المرضية تتيح لك الاستعلام عن حالة طلبك للإجازة ويمكنك طباعتها عن طريق تطبيق صحتي</p>
             </div>
 
-            <div class="form-wrapper bg-white shadow-sm rounded-3 p-4">
+            <div class="form-wrapper mt-4">
                 <form id="inquiryForm" onsubmit="handleForm(event)">
                     <div class="mb-3">
-                        <label for="serviceCode" class="form-label text-muted">رمز الخدمة</label>
-                        <input type="text" class="form-control" id="serviceCode" placeholder="أدخل رمز الخدمة" required>
+                        <input type="text" class="form-control text-center custom-input" id="serviceCode" placeholder="رمز الخدمة" required>
                     </div>
                     <div class="mb-4">
-                        <label for="idNumber" class="form-label text-muted">رقم الهوية / الإقامة</label>
-                        <input type="text" class="form-control" id="idNumber" placeholder="أدخل رقم الهوية أو الإقامة" required>
+                        <input type="text" class="form-control text-center custom-input" id="idNumber" placeholder="رقم الهوية / الإقامة" required>
                     </div>
-                    <div class="d-flex flex-column align-items-center mb-3">
-                        <button type="submit" class="btn btn-primary btn-custom mb-3 w-100">استعلام</button>
-                        <button type="button" class="btn btn-outline-primary btn-custom w-100" onclick="alert('جاري العودة للاستعلامات')">رجوع للاستعلامات</button>
+                    <div class="d-flex flex-column align-items-center">
+                        <button type="submit" class="btn btn-primary btn-custom mb-2">استعلام</button>
+                        <button type="button" class="btn btn-primary btn-custom" onclick="alert('جاري العودة للاستعلامات')">رجوع للاستعلامات</button>
                     </div>
                 </form>
             </div>
@@ -54,10 +52,10 @@
     <footer class="footer mt-auto">
         <div class="container text-center">
             <div class="footer-logo mb-3">
-                <img src="https://seha.sa/assets/images/logo.svg" style="filter: brightness(0) invert(1);" alt="صحة" height="60" onerror="this.src='https://upload.wikimedia.org/wikipedia/ar/thumb/a/a2/Seha_Platform_Logo.png/800px-Seha_Platform_Logo.png'; this.style.filter='brightness(0) invert(1)'; this.height=60;">
+                <img src="https://upload.wikimedia.org/wikipedia/ar/thumb/a/a2/Seha_Platform_Logo.png/320px-Seha_Platform_Logo.png" style="filter: brightness(0) invert(1);" alt="صحة" height="60">
             </div>
             <p class="footer-text">
-                منصة صحة هي منصة إلكترونية للخدمات الصحية تقدمها وزارة الصحة بالمملكة العربية السعودية. جميع الحقوق محفوظة © 2026
+                منصة صحة تخدم جميع المنشأت الطبية من خلال تقديم الخدمات الصحية إلكترونياً لجميع المنشأت الطبية وتسعى إلى توحيد وأتمتة الاجراءات والخدمات بما في دوره رفع جودة الاداء وخفض التكاليف.
             </p>
         </div>
     </footer>
