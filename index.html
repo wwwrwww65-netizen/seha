@@ -4,59 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>صحة - منصة الخدمات الصحية</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Header -->
-    <header class="header bg-white">
-        <div class="container-fluid d-flex justify-content-between align-items-center py-2 px-3 px-md-5">
-            <div class="logo">
-                <img src="https://upload.wikimedia.org/wikipedia/ar/thumb/a/a2/Seha_Platform_Logo.png/320px-Seha_Platform_Logo.png" alt="صحة" height="45">
-            </div>
-            <div class="menu-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#337ab7" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                </svg>
+    <header class="header">
+        <div class="header-inner">
+            <button class="hamburger" aria-label="القائمة">&#9776;</button>
+            <div class="logo-wrap">
+                <div class="logo-text">
+                    <span class="logo-arabic">صـحـة</span>
+                    <span class="logo-english">Seha</span>
+                </div>
+                <div class="logo-icon">
+                    <svg viewBox="0 0 60 70" width="52" height="60" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="30,3 57,18 57,52 30,67 3,52 3,18" fill="none" stroke="#1a6ea8" stroke-width="3"/>
+                        <polyline points="16,38 26,50 48,24" fill="none" stroke="#1a6ea8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="container" style="max-width: 600px;">
-            <div class="hero-section text-center mt-3">
-                <h1 class="hero-title">الإجازات المرضية</h1>
-                <p class="hero-desc">خدمة الاستعلام عن الإجازات المرضية تتيح لك الاستعلام عن حالة طلبك للإجازة ويمكنك طباعتها عن طريق تطبيق صحتي</p>
-            </div>
+        <div class="page-center">
+            <h1 class="hero-title">الإجازات المرضية</h1>
+            <p class="hero-desc">خدمة الاستعلام عن الإجازات المرضية تتيح لك الاستعلام عن حالة طلبك للإجازة ويمكنك طباعتها عن طريق تطبيق صحتي</p>
 
-            <div class="form-wrapper mt-4">
-                <form id="inquiryForm" onsubmit="handleForm(event)">
-                    <div class="mb-3">
-                        <input type="text" class="form-control text-center custom-input" id="serviceCode" placeholder="رمز الخدمة" required>
-                    </div>
-                    <div class="mb-4">
-                        <input type="text" class="form-control text-center custom-input" id="idNumber" placeholder="رقم الهوية / الإقامة" required>
-                    </div>
-                    <div class="d-flex flex-column align-items-center">
-                        <button type="submit" class="btn btn-primary btn-custom mb-2">استعلام</button>
-                        <button type="button" class="btn btn-primary btn-custom" onclick="alert('جاري العودة للاستعلامات')">رجوع للاستعلامات</button>
-                    </div>
-                </form>
-            </div>
+            <form id="inquiryForm" onsubmit="handleForm(event)">
+                <div class="input-wrap">
+                    <input type="text" class="custom-input" id="serviceCode" placeholder="رمز الخدمة" required>
+                </div>
+                <div class="input-wrap">
+                    <input type="text" class="custom-input" id="idNumber" placeholder="رقم الهوية / الإقامة" required>
+                </div>
+                <div class="btns-wrap">
+                    <button type="submit" class="btn-blue" id="submitBtn">استعلام</button>
+                    <button type="button" class="btn-blue" onclick="goBack()">رجوع للاستعلامات</button>
+                </div>
+            </form>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto">
-        <div class="container text-center">
-            <div class="footer-logo mb-3">
-                <img src="https://upload.wikimedia.org/wikipedia/ar/thumb/a/a2/Seha_Platform_Logo.png/320px-Seha_Platform_Logo.png" style="filter: brightness(0) invert(1);" alt="صحة" height="60">
+    <footer class="footer">
+        <!-- Logo Section -->
+        <div class="footer-logo-section">
+            <div class="footer-logo-wrap">
+                <div class="footer-logo-text">
+                    <span class="footer-logo-arabic">صـحـة</span>
+                    <span class="footer-logo-english">Seha</span>
+                </div>
+                <div class="footer-logo-icon">
+                    <svg viewBox="0 0 60 70" width="52" height="60" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="30,3 57,18 57,52 30,67 3,52 3,18" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="3"/>
+                        <polyline points="16,38 26,50 48,24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
             </div>
-            <p class="footer-text">
+            <p class="footer-desc">
                 منصة صحة تخدم جميع المنشأت الطبية من خلال تقديم الخدمات الصحية إلكترونياً لجميع المنشأت الطبية وتسعى إلى توحيد وأتمتة الاجراءات والخدمات بما في دوره رفع جودة الاداء وخفض التكاليف.
             </p>
+        </div>
+
+        <!-- Main Menu -->
+        <div class="footer-section">
+            <h3 class="footer-section-title">القائمة الرئيسية</h3>
+            <ul class="footer-links">
+                <li><a href="#">الخدمات</a></li>
+                <li><a href="#">الاستعلامات</a></li>
+                <li><a href="#">الأسئلة الشائعة</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="footer-section">
+            <h3 class="footer-section-title">تواصل معنا</h3>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="footer-partners">
+                <div class="partner-logo moh">
+                    <svg viewBox="0 0 80 80" width="45" height="45" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="40" r="38" fill="none" stroke="white" stroke-width="2"/>
+                        <text x="40" y="28" text-anchor="middle" fill="white" font-size="8" font-family="Tajawal,sans-serif">وزارة</text>
+                        <text x="40" y="42" text-anchor="middle" fill="white" font-size="8" font-family="Tajawal,sans-serif">الصحة</text>
+                        <text x="40" y="56" text-anchor="middle" fill="white" font-size="7" font-family="Arial,sans-serif">Ministry of Health</text>
+                    </svg>
+                </div>
+                <div class="partner-logo lean">
+                    <svg viewBox="0 0 80 40" width="55" height="30" xmlns="http://www.w3.org/2000/svg">
+                        <text x="40" y="30" text-anchor="middle" fill="white" font-size="28" font-family="Arial,sans-serif" font-weight="bold">lean</text>
+                    </svg>
+                </div>
+            </div>
+            <div class="footer-contact-info">
+                <div class="contact-row">
+                    <span class="contact-num">920002005</span>
+                    <span class="contact-icon">📞</span>
+                </div>
+                <div class="contact-row">
+                    <span class="contact-num">support@seha.sa</span>
+                    <span class="contact-icon">✉️</span>
+                </div>
+                <div class="contact-row">
+                    <span class="contact-num">920002005</span>
+                    <span class="contact-icon">💬</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-hours">
+            أوقات العمل: الأحد حتى الخميس 8 ص - 11 م
         </div>
     </footer>
 
