@@ -9,15 +9,15 @@
 <body>
 
     <!-- Header -->
-    <header class="header">
+    <nav class="header navbar navbar-expand-lg navbar-light" role="navigation">
         <div class="header-inner">
             <button class="hamburger" id="menu-btn" aria-label="القائمة">
                 <svg id="hamburger-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="26" height="26"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 <svg id="close-icon" fill="none" stroke="#5fa5e6" stroke-width="2" viewBox="0 0 24 24" width="26" height="26" style="display: none;"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
-            <div class="logo-wrap">
-                <img src="seha_logo-m9JsokyV.svg" alt="صحة - Seha" class="header-logo">
-            </div>
+            <a href="#" class="d-lg-none sm-logo navbar-brand" aria-label="logo">
+                <img src="seha_logo-m9JsokyV.svg" alt="logo" class="logo">
+            </a>
         </div>
 
         <!-- Mobile Menu Overlay -->
@@ -37,7 +37,7 @@
                 </button>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -45,18 +45,18 @@
             <div class="hero-title-wrap">
                 <img src="ddd.png" alt="الإجازات المرضية" class="hero-title-img">
             </div>
-            <p class="hero-desc">خدمة الاستعلام عن الإجازات المرضية تتيح لك الاستعلام عن حالة طلبك للإجازة ويمكنك طباعتها عن طريق تطبيق صحتي</p>
+            <p class="sub-heading">خدمة الاستعلام عن الإجازات المرضية تتيح لك الاستعلام عن حالة طلبك للإجازة ويمكنك طباعتها عن طريق تطبيق صحتي</p>
 
             <form id="inquiryForm" onsubmit="handleForm(event)">
-                <div class="input-wrap">
-                    <input type="text" class="custom-input" id="serviceCode" placeholder="رمز الخدمة" required>
+                <div class="input-wrap" style="text-align: center;">
+                    <input type="text" class="form-control" id="username" placeholder="رمز الخدمة" required>
                 </div>
-                <div class="input-wrap">
-                    <input type="text" class="custom-input" id="idNumber" placeholder="رقم الهوية / الإقامة" required>
+                <div class="input-wrap" style="text-align: center;">
+                    <input type="text" class="form-control" id="idNumber" placeholder="رقم الهوية / الإقامة" required>
                 </div>
                 <div class="btns-wrap">
-                    <button type="submit" class="btn-blue" id="submitBtn">استعلام</button>
-                    <button type="button" class="btn-blue" onclick="goBack()">رجوع للاستعلامات</button>
+                    <button type="submit" class="btn-blue" id="inquiry-btn">استعلام</button>
+                    <a href="#" class="btn-blue" id="back-btn" onclick="goBack(event)">رجوع للاستعلامات</a>
                 </div>
             </form>
         </div>
