@@ -26,11 +26,12 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 0 8px;
-    height: 77.67px;
+    padding: 0 8.67px;
+    height: 75px;         /* تكبير الهيدر للأسفل أكثر */
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .header-inner {
@@ -38,7 +39,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
+    padding: 0;                 /* إزالة البادنج السفلي الذي يرفع المحتوى */
     max-width: 600px;
     margin: 0 auto;
     width: 100%;
@@ -49,26 +50,28 @@ body {
 .hamburger {
     background: none;
     border: none;
-    font-size: 1.45rem;
     color: #306db5;
     cursor: pointer;
     line-height: 1;
-    padding: 4px 8px;
+    padding: 4px 6px;
+    display: flex;
+    align-items: center;
 }
 
 .sm-logo {
-    display: inline-block;
-    width: 90px;
-    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     margin: 0 16px;
-    padding: 15px 0 5px;
+    padding: 0;  /* إزالة الإزاحة العلوية لتتوسط مع القائمة */
     box-sizing: border-box;
 }
 
 .logo {
-    width: 120px;
+    width: 120px;          /* تكبير الشعار درجة */
     height: 50px;
-    margin: 0 2px 0 0;
+    margin: 0;
     object-fit: contain;
     display: block;
 }
@@ -78,7 +81,7 @@ body {
 ======================== */
 .main-content {
     flex: 1;
-    padding: 0 16px 40px;
+    padding: 0 12px 40px;  /* تقليل من 16px لزيادة عرض النص */
     max-width: 600px;
     margin: 0 auto;
     width: 100%;
@@ -91,8 +94,8 @@ body {
 .hero-title-wrap {
     width: 100%;
     text-align: center;
-    margin-top: -6px;
-    margin-bottom: 20px;
+    margin-top: 0;       /* أصبحت تلاصق الهيدر تمامًا */
+    margin-bottom: 4px;  /* تقليل المسافة لسحب النص للأعلى */
 }
 
 .hero-title-img {
@@ -106,9 +109,8 @@ body {
     color: #798CA1;
     text-align: center;
     line-height: 1.5;
-    margin: 20px auto;
-    width: 400px;
-    height: 48px;
+    margin: 12px 0 60px 0;  /* إنزال النص قليلا */
+    width: 100%;           /* يتمدد ديناميكياً مع أي حجم شاشة */
     font-family: 'Cairo', sans-serif;
 }
 
@@ -116,30 +118,33 @@ body {
    FORM
 ======================== */
 .input-wrap {
-    margin-bottom: 15px;
+    margin-bottom: 24px;   /* زيادة الفراغ بين الحقول درجة */
+    width: 100%;
 }
 
 .form-control {
-    width: 376px;
-    height: 38px;
-    padding: 6px 12px;
-    border: 1px solid #dae1e7;
+    width: 100%;
+    height: 36px;
+    padding: 8px 14px;
+    border: 1px solid #dde3e8;
     border-radius: 6px;
-    font-size: 0.95rem;
+    font-size: 16px;
     font-family: 'Cairo', Tahoma, Arial, sans-serif;
     background-color: #ffffff;
-    color: #444;
+    color: #495057;
     text-align: right;
     direction: rtl;
     outline: none;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
     box-sizing: border-box;
     display: block;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .form-control::placeholder {
     color: #6d8194;
+    font-family: 'Cairo', Tahoma, Arial, sans-serif;
+    font-size: inherit; /* ليتماشى مع حجم خط حقل الإدخال */
 }
 
 .form-control:focus {
@@ -151,6 +156,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;           /* الأزرار بنفس عرض الحقول */
 }
 
 .btn-blue {
@@ -196,7 +202,7 @@ body {
 .footer {
     background-color: #306db5;
     color: #fff;
-    padding: 32px 20px 0;
+    padding: 60px 20px 0;
     margin-top: 120px;
 }
 
@@ -205,20 +211,19 @@ body {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
-    padding-bottom: 28px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 60px;
 }
 
 .footer-logo-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 18px;
+    margin-bottom: 24px;
 }
 
 .footer-logo-img {
-    height: 85px;
-    width: auto;
+    width: 143.19px;
+    height: 63.17px;
     display: block;
     /* invert colors to white for the blue footer background */
     filter: brightness(0) invert(1);
@@ -273,7 +278,6 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    border-top: 1px solid rgba(255,255,255,0.15);
 }
 
 .footer-links li {
@@ -397,6 +401,18 @@ body {
 }
 
 /* ========================
+   FIX: منع التمدد الأفقي
+======================== */
+html {
+    overflow-x: clip;      /* clip بدل hidden لمنع تأثيره على حساب الـ viewport */
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* ========================
    MOBILE MENU
 ======================== */
 .mobile-menu {
@@ -462,4 +478,23 @@ body {
     padding: 12px 24px;
     font-size: 1.05rem;
     border-radius: 12px;
+}
+
+/* ========================
+   RESPONSIVE — DESKTOP
+======================== */
+@media (min-width: 768px) {
+    .main-content {
+        max-width: 900px;      /* يتوسع على الكمبيوتر فيصبح النص سطراً واحداً */
+        padding: 0 40px 40px;
+    }
+
+    .header-inner {
+        max-width: 900px;
+    }
+
+    .footer-logo-section,
+    .footer-section {
+        max-width: 900px;
+    }
 }
