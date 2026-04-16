@@ -236,7 +236,7 @@ body {
 }
 
 .footer-desc {
-    font-size: 0.8rem;     /* تصغير الخط ليكون ناعماً كالأصل */
+    font-size: 0.95rem;    
     line-height: 1.9;
     color: rgba(255,255,255,0.9);
     text-align: center;
@@ -248,7 +248,7 @@ body {
 .footer-section {
     max-width: 600px;
     margin: 0 auto;
-    padding: 22px 10px 0;  /* 👈 التعديل هنا: تقليل الـ Padding من 20px إلى 10px لتقريب العناصر من الحواف */
+    padding: 22px 10px 0;  
     text-align: center;
 }
 
@@ -258,8 +258,8 @@ body {
 }
 
 .footer-section-title {
-    font-size: 1rem;       /* تصغير حجم خط العناوين */
-    font-weight: 500;      /* تقليل سماكة الخط (Bold) ليكون أنعم */
+    font-size: 1.15rem;    
+    font-weight: 700;      
     color: #fff;
     position: relative;
     display: inline-block;
@@ -273,8 +273,8 @@ body {
     bottom: 0;
     right: 50%;
     transform: translateX(50%);
-    width: 120px;          /* إطالة الخط قليلاً */
-    height: 1.5px;         /* تنحيف الخط ليتطابق مع الصورة المرجعية */
+    width: 120px;          
+    height: 2.5px;         /* 👈 تم زيادة سماكة الخط قليلاً للأعلى والأسفل */
     background: #8bb8e4;
     border-radius: 2px;
 }
@@ -299,7 +299,7 @@ body {
 .footer-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 0.85rem;    /* تصغير خطوط القائمة السفلية */
+    font-size: 1.05rem;    
     transition: color 0.2s;
 }
 
@@ -332,7 +332,7 @@ body {
 }
 
 .contact-num {
-    font-size: 0.75rem;    /* تصغير أرقام التواصل */
+    font-size: 0.75rem;    
     color: #fff;
     font-family: Arial, sans-serif;
 }
@@ -349,14 +349,14 @@ body {
 }
 
 .partners-img {
-    height: 85px;
+    height: 100px;         
     width: auto;
     object-fit: contain;
 }
 
 /* Footer Hours */
 .footer-hours {
-    font-size: 0.7rem;     /* تصغير أوقات العمل */
+    font-size: 0.7rem;     
     color: rgba(255, 255, 255, 0.9);
     position: absolute;
     bottom: -35px;
@@ -367,8 +367,8 @@ body {
 /* Social & Copyright */
 .social-links {
     display: flex;
-    justify-content: flex-start; /* محاذاة الأيقونات لليمين تحت أوقات العمل */
-    flex-direction: row-reverse; /* عكس الترتيب (ليصبح يوتيوب ثم X) */
+    justify-content: flex-end; /* 👈 تم نقل الأيقونات إلى أقصى اليسار */
+    flex-direction: row-reverse; 
     gap: 20px;
     margin-bottom: 40px;
 }
@@ -384,7 +384,7 @@ body {
 
 .footer-copyright {
     text-align: center;
-    font-size: 0.75rem;    /* تصغير حقوق النشر لتلائم المساحة */
+    font-size: 0.75rem;    
     color: #fff;
     padding-bottom: 20px;
 }
@@ -411,7 +411,7 @@ body {
    FIX: منع التمدد الأفقي
 ======================== */
 html {
-    overflow-x: clip;      /* clip بدل hidden لمنع تأثيره على حساب الـ viewport */
+    overflow-x: clip;      
 }
 
 body {
@@ -492,7 +492,7 @@ body {
 ======================== */
 @media (min-width: 768px) {
     .main-content {
-        max-width: 900px;      /* يتوسع على الكمبيوتر فيصبح النص سطراً واحداً */
+        max-width: 900px;      
         padding: 0 40px 40px;
     }
 
