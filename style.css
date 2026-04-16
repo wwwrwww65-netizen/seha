@@ -94,7 +94,7 @@ body {
 .hero-title-wrap {
     width: 100%;
     text-align: center;
-    margin-top: -15px;  /* 👈 استخدم قيمة سالبة هنا لسحب الصورة للأعلى */
+    margin-top: -4px;  /* 👈 استخدم قيمة سالبة هنا لسحب الصورة للأعلى */
     margin-bottom: 4px;
 }
 
