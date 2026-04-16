@@ -50,12 +50,17 @@ body {
 .hamburger {
     background: none;
     border: none;
-    color: #306db5;
+    color: #5a94d6;        /* تفتيح اللون */
     cursor: pointer;
     line-height: 1;
     padding: 4px 6px;
     display: flex;
     align-items: center;
+    
+    /* الاستخدام الآمن للتحريك دون التأثير على الشعار */
+    position: relative;
+    left: 15px;  /* إدخاله للوسط (لليمين) */
+    top: 8px;    /* إنزاله للأسفل */
 }
 
 .sm-logo {
