@@ -223,11 +223,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    margin-top: 15px;      /* 1. هذه القيمة لإنزال الشعار للأسفل مبتعداً عن الحافة العلوية للفوتر */
-    margin-bottom: 40px;   /* 2. هذه القيمة لزيادة التباعد بين الشعار والنص الذي تحته (كانت 24px) */
+    margin-top: 15px;      
+    margin-bottom: 40px;   
 }
-
 
 .footer-logo-img {
     width: 143.19px;
@@ -238,7 +236,7 @@ body {
 }
 
 .footer-desc {
-    font-size: 0.95rem;
+    font-size: 0.8rem;     /* تصغير الخط ليكون ناعماً كالأصل */
     line-height: 1.9;
     color: rgba(255,255,255,0.9);
     text-align: center;
@@ -250,7 +248,7 @@ body {
 .footer-section {
     max-width: 600px;
     margin: 0 auto;
-    padding: 22px 20px 0;
+    padding: 22px 10px 0;  /* 👈 التعديل هنا: تقليل الـ Padding من 20px إلى 10px لتقريب العناصر من الحواف */
     text-align: center;
 }
 
@@ -260,8 +258,8 @@ body {
 }
 
 .footer-section-title {
-    font-size: 1.15rem;
-    font-weight: 700;
+    font-size: 1rem;       /* تصغير حجم خط العناوين */
+    font-weight: 500;      /* تقليل سماكة الخط (Bold) ليكون أنعم */
     color: #fff;
     position: relative;
     display: inline-block;
@@ -275,8 +273,8 @@ body {
     bottom: 0;
     right: 50%;
     transform: translateX(50%);
-    width: 100px;
-    height: 3px;
+    width: 120px;          /* إطالة الخط قليلاً */
+    height: 1.5px;         /* تنحيف الخط ليتطابق مع الصورة المرجعية */
     background: #8bb8e4;
     border-radius: 2px;
 }
@@ -301,7 +299,7 @@ body {
 .footer-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.05rem;
+    font-size: 0.85rem;    /* تصغير خطوط القائمة السفلية */
     transition: color 0.2s;
 }
 
@@ -334,7 +332,7 @@ body {
 }
 
 .contact-num {
-    font-size: 0.85rem;
+    font-size: 0.75rem;    /* تصغير أرقام التواصل */
     color: #fff;
     font-family: Arial, sans-serif;
 }
@@ -358,7 +356,7 @@ body {
 
 /* Footer Hours */
 .footer-hours {
-    font-size: 0.8rem;
+    font-size: 0.7rem;     /* تصغير أوقات العمل */
     color: rgba(255, 255, 255, 0.9);
     position: absolute;
     bottom: -35px;
@@ -369,7 +367,8 @@ body {
 /* Social & Copyright */
 .social-links {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* محاذاة الأيقونات لليمين تحت أوقات العمل */
+    flex-direction: row-reverse; /* عكس الترتيب (ليصبح يوتيوب ثم X) */
     gap: 20px;
     margin-bottom: 40px;
 }
@@ -385,7 +384,7 @@ body {
 
 .footer-copyright {
     text-align: center;
-    font-size: 0.85rem;
+    font-size: 0.75rem;    /* تصغير حقوق النشر لتلائم المساحة */
     color: #fff;
     padding-bottom: 20px;
 }
