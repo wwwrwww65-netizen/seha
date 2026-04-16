@@ -94,8 +94,8 @@ body {
 .hero-title-wrap {
     width: 100%;
     text-align: center;
-    margin-top: 0;       /* أصبحت تلاصق الهيدر تمامًا */
-    margin-bottom: 4px;  /* تقليل المسافة لسحب النص للأعلى */
+    margin-top: -15px;  /* 👈 استخدم قيمة سالبة هنا لسحب الصورة للأعلى */
+    margin-bottom: 4px;
 }
 
 .hero-title-img {
