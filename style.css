@@ -99,7 +99,7 @@ body {
 .hero-title-wrap {
     width: 100%;
     text-align: center;
-    margin-top: -9px;  /* 👈 استخدم قيمة سالبة هنا لسحب الصورة للأعلى */
+    margin-top: -10px;  /* 👈 استخدم قيمة سالبة هنا لسحب الصورة للأعلى */
     margin-bottom: 4px;
 }
 
@@ -114,7 +114,7 @@ body {
     color: #798CA1;
     text-align: center;
     line-height: 1.5;
-    margin: 12px 0 30px 0;  /* إنزال النص قليلا */
+    margin: 12px 0 40px 0;  /* إنزال النص قليلا */
     width: 100%;           /* يتمدد ديناميكياً مع أي حجم شاشة */
     font-family: 'Cairo', sans-serif;
 }
