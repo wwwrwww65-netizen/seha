@@ -21,14 +21,14 @@ const DB = {
     async requireAuth() {
         await this.init();
         if (!this._currentUser) {
-            window.location.href = 'login.html';
+            window.location.href = 'login';
         }
     },
 
     async redirectIfLoggedIn() {
         await this.init();
         if (this._currentUser) {
-            window.location.href = 'dashboard.html';
+            window.location.href = 'dashboard';
         }
     },
 

@@ -265,7 +265,7 @@
 
                 const loginResult = await DB.login(email, pass);
                 if(loginResult === 'success') {
-                    window.location.href = "dashboard.html";
+                    window.location.href = "dashboard";
                 } else if(loginResult === 'inactive') {
                     alert("عذراً، هذا الحساب موقوف حالياً. يرجى مراجعة إدارة النظام.");
                 } else {

@@ -8,7 +8,19 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Disable directory listing
-Options -Indexes
+Options -Indexes -MultiViews
+
+# Enable Pretty URLs (Hide .html extension)
+RewriteEngine On
+
+# 1. Redirect /page.html to /page
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [L,R=301]
+
+# 2. Check if the file exists as .html and serve it
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
 
 # Block access to sensitive files
 <FilesMatch "\.(sql|log|env|git|md)$">
