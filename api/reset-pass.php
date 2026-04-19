@@ -1,27 +1,29 @@
 <?php
-// ============================================
-// ملف مؤقت لإعادة تعيين كلمة مرور المدير
-// احذف هذا الملف فور استخدامه!
-// ============================================
-
+// ملف تشخيص مؤقت - احذفه بعد الاستخدام فوراً
 require_once 'config.php';
 
-$newPassword = '777310';
-$newHash = password_hash($newPassword, PASSWORD_BCRYPT, ['cost' => 12]);
+$testPassword = '777310';
 
-$stmt = $conn->prepare("UPDATE users SET password_hash = ? WHERE username = 'u@seha-sa.life'");
-$stmt->execute([$newHash]);
+// جلب كافة المستخدمين من قاعدة البيانات
+$stmt = $conn->query("SELECT id, username, role, status, LEFT(password_hash, 30) as hash_preview FROM users");
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if ($stmt->rowCount() > 0) {
-    echo json_encode([
-        'status' => 'success',
-        'message' => 'تم تحديث كلمة المرور بنجاح! احذف هذا الملف الآن من api/reset-pass.php',
-        'hash_preview' => substr($newHash, 0, 20) . '...'
-    ]);
-} else {
-    echo json_encode([
-        'status' => 'error',
-        'message' => 'لم يتم العثور على المستخدم أو حدث خطأ'
-    ]);
-}
+// تحديث كلمة مرور المدير مباشرة
+$newHash = password_hash($testPassword, PASSWORD_BCRYPT, ['cost' => 10]);
+$update = $conn->prepare("UPDATE users SET password_hash = ? WHERE id = 1");
+$update->execute([$newHash]);
+
+// التحقق من نجاح التحديث
+$stmt2 = $conn->query("SELECT username, password_hash FROM users WHERE id = 1");
+$user = $stmt2->fetch(PDO::FETCH_ASSOC);
+
+$verifyResult = password_verify($testPassword, $user['password_hash']);
+
+echo json_encode([
+    'users_in_db' => $users,
+    'password_update' => 'done',
+    'verify_777310' => $verifyResult ? 'SUCCESS ✅' : 'FAILED ❌',
+    'new_hash_sample' => substr($newHash, 0, 25) . '...',
+    'IMPORTANT' => 'DELETE THIS FILE NOW!'
+], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 ?>
