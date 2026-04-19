@@ -1,12 +1,6 @@
-# Prevent direct browser access to API folder
+# Prevent directory listing only
 Options -Indexes
 
-# Only allow PHP files - no directory listing
-<FilesMatch "^(?!.*\.php$)">
-    Order Allow,Deny
-    Deny from all
-</FilesMatch>
-
-# Block sensitive info from error messages
+# Hide PHP errors from users
 php_flag display_errors Off
 php_flag log_errors On
