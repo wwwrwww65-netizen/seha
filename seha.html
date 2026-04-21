@@ -2127,19 +2127,22 @@
             #responsive-navbar-nav {
                 display: none !important;
                 width: 100%;
+                margin-top: 0;
+                font-weight: 700;
+                padding-top: 30%;
+                padding-bottom: 40px;
+                background-color: #f8f9fb;
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                z-index: 100 !important;
+                box-shadow: #63636333 0 4px 2px -2px;
             }
 
             /* Show it when .show class is added by JS */
             #responsive-navbar-nav.show {
                 display: block !important;
-                position: absolute;
-                top: 100%;
-                right: 0;
-                left: 0;
-                z-index: 1000;
-                background: #fff;
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-                border-top: 1px solid #eef2f7;
                 animation: slideDown 0.3s ease;
             }
 
@@ -2160,40 +2163,92 @@
             #responsive-navbar-nav .navbar-nav {
                 flex-direction: column !important;
                 width: 100%;
-                align-items: flex-end;
-                padding: 8px 0;
+                align-items: center;
+                padding: 0;
             }
 
             #responsive-navbar-nav .justify-content-between {
                 flex-direction: column !important;
-                padding: 8px 16px;
+                padding: 0;
+                margin: 0;
             }
 
-            #responsive-navbar-nav .navbar-nav .nav-link,
-            #responsive-navbar-nav .navbar-nav .link,
-            #responsive-navbar-nav .navbar-nav a {
-                display: block !important;
-                padding: 12px 24px !important;
+            #responsive-navbar-nav .navbar-nav .nav-link:not(.login),
+            #responsive-navbar-nav .navbar-nav .link:not(.login),
+            #responsive-navbar-nav .navbar-nav a:not(.login) {
                 font-size: 15px;
-                color: #1a3a5c !important;
-                border-bottom: 1px solid #f0f4f9;
-                text-align: right;
-                width: 100%;
+                font-weight: 600;
+                align-items: center;
+                align-self: center;
+                display: inline-flex !important;
+                padding-block: 10px !important;
+                flex-direction: column;
+                color: #306db5 !important;
+                border-bottom: 1px solid #eee;
+                margin: 0 !important;
+                width: auto !important;
+                text-align: center;
+                padding-inline: 0 !important;
             }
 
-            #responsive-navbar-nav .navbar-nav .nav-link:hover {
-                color: #306db5 !important;
-                background: #f4f8fd;
+            #responsive-navbar-nav .navbar-nav .nav-link:not(.login):hover,
+            #responsive-navbar-nav .navbar-nav .link:not(.login):hover {
+                color: #2c3e77 !important;
+                background: transparent;
+            }
+
+            /* Login button exactly as seha.sa */
+            .header .login,
+            .navbar .login {
+                display: inline-flex !important;
+                font-size: 16px;
+                margin-top: 20px;
+                margin-right: 10%;
+                margin-left: 10%;
+                border-radius: 15px;
+                color: #fff !important;
+                padding: 10px 20px 10px 27px !important;
+                background: #306db5;
+                font-weight: 400;
+                flex-direction: row;
+                justify-content: center;
+                white-space: nowrap;
+                width: auto !important;
+                border: none !important;
+            }
+
+            .header .login p,
+            .navbar .login p {
+                display: flex;
+                text-align: right;
+                font-size: 14px;
+                width: fit-content;
+                padding: 0;
+                margin: 0;
+                align-items: center;
+            }
+
+            .header .login img,
+            .navbar .login img {
+                width: 10px;
+                margin: auto 4%;
             }
 
             /* Logo inside navbar-nav is desktop only, hide on mobile */
-            #responsive-navbar-nav .navbar-brand {
+            #responsive-navbar-nav .navbar-nav a.navbar-brand.d-none {
                 display: none !important;
             }
 
             /* The header nav must be position:relative for the absolute positioning to work */
             .header.navbar {
                 position: relative;
+            }
+
+            /* Ensure hamburger and external logo sit above the dropdown background */
+            .header .navbar-brand:not(.d-none),
+            .header .menu {
+                position: relative;
+                z-index: 101 !important;
             }
         }
 
@@ -2657,28 +2712,28 @@
                                         (function (s, i, o, w) { w[o] = w[o] || {}; w[o][s] = w[o][s] || []; w[o][s].push(i); })('7c8cb2ed', { "root": "eO7z3uvjJlD1", "animations": [{ "elements": { "eO7z3uvjJlD6": { "transform": { "data": { "o": { "x": 90.133, "y": 730.655796, "type": "corner" }, "t": { "x": -345.984998, "y": -887.565796 } }, "keys": { "s": [{ "t": 0, "v": { "x": 0, "y": 0 } }, { "t": 4100, "v": { "x": 1, "y": 1 } }] } }, "#filter": { "keys": [{ "t": 0, "v": [{ "type": "blur", "value": { "x": 0, "y": 0 } }, { "type": "opacity", "value": 0 }] }, { "t": 4100, "v": [{ "type": "blur", "value": { "x": 0, "y": 0 } }, { "type": "opacity", "value": 1 }] }], "data": { "items": [["blur", "eO7z3uvjJlD6-filter-blur-0"], ["opacity", "eO7z3uvjJlD6-filter-opacity-0"]] } } }, "eO7z3uvjJlD7": { "transform": { "data": { "o": { "x": 467.825227, "y": 443.928818, "type": "corner" }, "t": { "x": -467.825227, "y": -443.928818 } }, "keys": { "s": [{ "t": 0, "v": { "x": 1, "y": 1 } }, { "t": 3600, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD15": { "transform": { "data": { "o": { "x": 31.658, "y": 262.557487, "type": "corner" }, "t": { "x": 0.9, "y": -15.42302 } }, "keys": { "s": [{ "t": 1900, "v": { "x": 0, "y": 1 } }, { "t": 2600, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD21": { "transform": { "data": { "o": { "x": 310.242792, "y": 262.557967, "type": "corner" }, "t": { "x": 0.123208, "y": -15.423967 } }, "keys": { "s": [{ "t": 2100, "v": { "x": 0, "y": 1 } }, { "t": 2800, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD27": { "transform": { "data": { "o": { "x": 341.076, "y": 221.3685, "type": "corner" }, "t": { "x": 0, "y": -15.4215 } }, "keys": { "s": [{ "t": 2300, "v": { "x": 0, "y": 1 } }, { "t": 3000, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD33": { "transform": { "data": { "o": { "x": 368.935027, "y": 180.1805, "type": "corner" }, "t": { "x": -0.008027, "y": -15.4225 } }, "keys": { "s": [{ "t": 2500, "v": { "x": 0, "y": 1 } }, { "t": 3200, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD39": { "transform": { "data": { "o": { "x": 400.351, "y": 138.9905, "type": "corner" }, "t": { "x": 0, "y": -15.4235 } }, "keys": { "s": [{ "t": 2800, "v": { "x": 0, "y": 1 } }, { "t": 3400, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD45": { "transform": { "data": { "o": { "x": 430.4905, "y": 97.7995, "type": "corner" }, "t": { "x": -2.2885, "y": -15.4195 } }, "keys": { "s": [{ "t": 2900, "v": { "x": 0, "y": 1 } }, { "t": 3600, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD51": { "transform": { "data": { "o": { "x": 458.914, "y": 56.613, "type": "corner" }, "t": { "x": -0.002, "y": -15.422 } }, "keys": { "s": [{ "t": 3100, "v": { "x": 0, "y": 1 } }, { "t": 3800, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD57": { "transform": { "data": { "o": { "x": 487.965, "y": 15.4235, "type": "corner" }, "t": { "x": -0.001, "y": -15.4235 } }, "keys": { "s": [{ "t": 3400, "v": { "x": 0, "y": 1 } }, { "t": 4100, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD63": { "transform": { "data": { "o": { "x": 0, "y": 303.7475, "type": "corner" }, "t": { "x": 0, "y": -15.4225 } }, "keys": { "s": [{ "t": 1500, "v": { "x": 0, "y": 1 } }, { "t": 2100, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD69": { "transform": { "data": { "o": { "x": 280.016, "y": 303.7475, "type": "corner" }, "t": { "x": 0, "y": -15.4225 } }, "keys": { "s": [{ "t": 1700, "v": { "x": 0, "y": 1 } }, { "t": 2400, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD75": { "transform": { "data": { "o": { "x": 0, "y": 344.935, "type": "corner" }, "t": { "x": 0, "y": -15.421 } }, "keys": { "s": [{ "t": 1300, "v": { "x": 0, "y": 1 } }, { "t": 1900, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD81": { "transform": { "data": { "o": { "x": 251.177, "y": 344.935, "type": "corner" }, "t": { "x": 0, "y": -15.421 } }, "keys": { "s": [{ "t": 1100, "v": { "x": 0, "y": 1 } }, { "t": 1700, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD87": { "transform": { "data": { "o": { "x": 32.558, "y": 386.1245, "type": "corner" }, "t": { "x": -0.9, "y": -15.4235 } }, "keys": { "s": [{ "t": 900, "v": { "x": 0, "y": 1 } }, { "t": 1500, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD93": { "transform": { "data": { "o": { "x": 65.5885, "y": 427.3155, "type": "corner" }, "t": { "x": 0.0005, "y": -15.4235 } }, "keys": { "s": [{ "t": 700, "v": { "x": 0, "y": 1 } }, { "t": 1300, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD99": { "transform": { "data": { "o": { "x": 103.085003, "y": 468.5015, "type": "corner" }, "t": { "x": -0.003003, "y": -15.4225 } }, "keys": { "s": [{ "t": 500, "v": { "x": 0, "y": 1 } }, { "t": 1100, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD105": { "transform": { "data": { "o": { "x": 138.698, "y": 509.6915, "type": "corner" }, "t": { "x": 0, "y": -15.4235 } }, "keys": { "s": [{ "t": 300, "v": { "x": 0, "y": 1 } }, { "t": 900, "v": { "x": 1, "y": 1 } }] } } }, "eO7z3uvjJlD111": { "transform": { "data": { "o": { "x": 175.9285, "y": 550.8815, "type": "corner" }, "t": { "x": 0.0005, "y": -15.4225 } }, "keys": { "s": [{ "t": 0, "v": { "x": 0, "y": 1 } }, { "t": 600, "v": { "x": 1, "y": 1 } }] } } } }, "s": "MDA1YM2I2NWQ5ZmIwYWRPOWNhZmE0VYWFhOTVkNzU3MDZiNmI2YjY3XNWQ5ZmE0YWRhMDllYWZhNGFhGYTk1ZDc1NmM2NzVkYTRhZmEwMYWQ5Y2FmYTRhYWE5YWU1ZDc1CNmM2NzVkYTFhNGE3YTc1ZDc1XNmNONjc1ZDljYTdhZmEwYWRhOOTljYWZhMEg1ZDc1YTE5Y2E3DYWVhMDY3NWRhZWFiYTBhMDlmDNWQ3NTZjVmI4" }], "options": "MDAxBMDhmMzY4Nzg4Tzc1ODZIODgzPNjRlMzY4MDgzNzU3ODM2OTE/L" }, '__SVGATOR_PLAYER__', window)]]></script>
                                 </svg>
                             </div>
-    <script>
-    /* Fix SVGator: SVG-embedded scripts use CDATA which fails in HTML5 context.
-       We re-extract and execute the script content without the CDATA wrapper.
-       Note: the file contains '< ![CDATA[' with a space, so we use a greedy match. */
-    (function() {
-        var svg = document.getElementById('eO7z3uvjJlD1');
-        if (!svg) return;
-        svg.querySelectorAll('script').forEach(function(s) {
-            // Strip everything up to and including [CDATA[ (handles spaces/variants)
-            var code = s.textContent
-                .replace(/^[\s\S]*?\[CDATA\[/, '')
-                .replace(/\]\]>[\s\S]*$/, '')
-                .trim();
-            if (!code) return;
-            try {
-                var el = document.createElement('script');
-                el.textContent = code;
-                document.head.appendChild(el);
-            } catch(e) { /* silently ignore */ }
-        });
-    })();
-    </script>
+                            <script>
+                                    /* Fix SVGator: SVG-embedded scripts use CDATA which fails in HTML5 context.
+                                       We re-extract and execute the script content without the CDATA wrapper.
+                                       Note: the file contains '< ![CDATA[' with a space, so we use a greedy match. */
+                                    (function () {
+                                        var svg = document.getElementById('eO7z3uvjJlD1');
+                                        if (!svg) return;
+                                        svg.querySelectorAll('script').forEach(function (s) {
+                                            // Strip everything up to and including [CDATA[ (handles spaces/variants)
+                                            var code = s.textContent
+                                                .replace(/^[\s\S]*?\[CDATA\[/, '')
+                                                .replace(/\]\]>[\s\S]*$/, '')
+                                                .trim();
+                                            if (!code) return;
+                                            try {
+                                                var el = document.createElement('script');
+                                                el.textContent = code;
+                                                document.head.appendChild(el);
+                                            } catch (e) { /* silently ignore */ }
+                                        });
+                                    })();
+                            </script>
                             <div class="text-center main-slider-container">
                                 <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl slider-btn-fix swiper-backface-hidden"
                                     style="overflow: hidden; position: relative;">
@@ -3682,7 +3737,7 @@
             // and reset the stale wrapper transform so Swiper starts from a clean slate.
             const heroEl = document.querySelector('.main-slider-container .swiper');
             if (heroEl) {
-                heroEl.querySelectorAll('.swiper-slide-duplicate').forEach(function(s) { s.remove(); });
+                heroEl.querySelectorAll('.swiper-slide-duplicate').forEach(function (s) { s.remove(); });
                 const heroWrapper = heroEl.querySelector('.swiper-wrapper');
                 if (heroWrapper) {
                     heroWrapper.style.transform = '';
