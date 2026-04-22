@@ -10,6 +10,31 @@
 
     <!-- Header -->
     <nav class="header navbar navbar-expand-lg navbar-light" role="navigation">
+        <!-- Desktop Header (hidden on mobile) -->
+        <div class="desktop-header" aria-label="القائمة الرئيسية">
+            <div class="desktop-header-inner">
+                <div class="desktop-brand">
+                    <a href="seha.html" class="desktop-logo-link" aria-label="Seha logo">
+                        <img src="seha_logo-m9JsokyV.svg" alt="صحة - Seha" class="desktop-logo">
+                    </a>
+                </div>
+
+                <ul class="desktop-nav">
+                    <li><a href="seha.html" class="active">الرئيسية</a></li>
+                    <li><a href="seha.html">الخدمات</a></li>
+                    <li><a href="seha.html">الاستعلامات</a></li>
+                    <li><a href="seha.html">المساهمات</a></li>
+                    <li><a href="seha.html">الأسئلة الشائعة</a></li>
+                    <li><a href="seha.html">تواصل معنا</a></li>
+                </ul>
+
+                <div class="desktop-actions">
+                    <a href="#" class="desktop-link">إنشاء حساب</a>
+                    <button class="btn-blue desktop-login-btn" type="button">تسجيل الدخول</button>
+                </div>
+            </div>
+        </div>
+
         <div class="header-inner">
             <button class="hamburger" id="menu-btn" aria-label="القائمة">
                 <svg id="hamburger-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="26" height="26"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -25,11 +50,11 @@
             <ul class="mobile-nav">
                 <li><a href="seha.html">صحة</a></li>
                 <li><a href="index.html" class="active">استعلام عن إجازة</a></li>
-                <li><a href="#">الخدمات</a></li>
-                <li><a href="#">الاستعلامات</a></li>
-                <li><a href="#">الأسئلة الشائعة</a></li>
-                <li><a href="#">تواصل معنا</a></li>
-                <li><a href="#">إنشاء حساب</a></li>
+                <li><a href="seha.html">الخدمات</a></li>
+                <li><a href="seha.html">الاستعلامات</a></li>
+                <li><a href="seha.html">الأسئلة الشائعة</a></li>
+                <li><a href="seha.html">تواصل معنا</a></li>
+                <li><a href="seha.html">إنشاء حساب</a></li>
             </ul>
             <div class="mobile-login-wrap">
                 <button class="btn-blue login-btn">
@@ -60,11 +85,47 @@
                     <a href="#" class="btn-blue" id="back-btn" onclick="goBack(event)">رجوع للاستعلامات</a>
                 </div>
             </form>
+
+            <div id="resultWrapper" class="result-wrapper" style="display: none;">
+                <div class="result-item">
+                    <span class="result-label">الاسم:</span>
+                    <span class="result-value">زمزم يحيى احمد معني</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">تاريخ إصدار تقرير الإجازة:</span>
+                    <span class="result-value">2026-02-12</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">تبدأ من:</span>
+                    <span class="result-value">2026-02-11</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">وحتى:</span>
+                    <span class="result-value">2026-02-12</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">المدة بالأيام:</span>
+                    <span class="result-value">2</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">اسم الطبيب:</span>
+                    <span class="result-value">محمد ابراهيم</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">المسمى الوظيفي:</span>
+                    <span class="result-value">اخصائي</span>
+                </div>
+            </div>
+
+            <div id="newInquiryBtnWrap" class="new-inquiry-btn-wrap" style="display: none;">
+                <button type="button" class="btn-blue" id="new-inquiry-btn" onclick="resetForm()">استعلام جديد</button>
+            </div>
         </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-inner">
         <!-- Logo Section -->
         <div class="footer-logo-section">
             <div class="footer-logo-wrap">
@@ -116,24 +177,25 @@
                     <img src="123.png" alt="وزارة الصحة وشركة لين" class="partners-img">
                 </div>
             </div>
+        </div>
 
-            <div class="social-links">
-                <a href="#" class="social-link">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
-                </a>
-                <a href="#" class="social-link">
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                </a>
-            </div>
+        <div class="social-links">
+            <a href="#" class="social-link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+            </a>
+            <a href="#" class="social-link">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+        </div>
 
-            <div class="footer-copyright">
-                <p>منصة صحة معتمدة من قبل وزارة الصحة © 2026</p>
-                <div class="copyright-links">
-                    <a href="#">سياسة الخصوصية وشروط الإستخدام</a>
-                    <span class="separator">|</span>
-                    <a href="#">دليل الاستخدام</a>
-                </div>
+        <div class="footer-copyright">
+            <p>منصة صحة معتمدة من قبل وزارة الصحة © 2026</p>
+            <div class="copyright-links">
+                <a href="#">سياسة الخصوصية وشروط الإستخدام</a>
+                <span class="separator">|</span>
+                <a href="#">دليل الاستخدام</a>
             </div>
+        </div>
         </div>
     </footer>
 

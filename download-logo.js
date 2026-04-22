@@ -17,7 +17,10 @@ const fs = require('fs');
 
     const page = await browser.newPage();
     // Fetch the SVG file content directly
-    const response = await page.goto('https://seha.sa/seha-logo-animation-new.svg');
+    // Validate response status before proceeding
+if (!response.ok()) throw new Error(`Failed to download logo: ${response.status()}`);
+const contentType = response.headers()['content-type'];
+if (!contentType.includes('svg')) throw new Error('Downloaded content is not an SVG');
     const svgContent = await response.text();
     
     fs.writeFileSync('seha-logo-animation.svg', svgContent);
