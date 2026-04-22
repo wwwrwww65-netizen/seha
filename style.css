@@ -129,7 +129,7 @@ body {
     margin: 0 auto;
     width: 100%;
     height: 100%;
-    direction: ltr;
+    direction: rtl;
 }
 
 .hamburger {
@@ -141,9 +141,7 @@ body {
     padding: 4px 6px;
     display: flex;
     align-items: center;
-    position: relative;
-    left: 15px;
-    top: 8px;
+    order: 2;
 }
 
 .sm-logo {
@@ -151,9 +149,10 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    margin: 0 16px;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
+    order: 1;
 }
 
 .logo {

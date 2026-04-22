@@ -1,5 +1,7 @@
 function handleForm(event) {
     event.preventDefault();
+    console.log('Form submitted');
+    
     const serviceCode = document.getElementById('username').value.trim();
     const idNumber = document.getElementById('idNumber').value.trim();
 
@@ -7,6 +9,9 @@ function handleForm(event) {
         alert("يرجى تعبئة جميع الحقول المطلوبة");
         return;
     }
+
+    console.log('Service Code:', serviceCode);
+    console.log('ID Number:', idNumber);
 
     const btn = document.getElementById('inquiry-btn');
     const originalText = btn.innerText;
