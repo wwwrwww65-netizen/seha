@@ -35,7 +35,13 @@ elseif ($action === 'add' && $method === 'POST') {
         ]);
         jsonResponse(['status' => 'success', 'id' => $id]);
     } catch (PDOException $e) {
-        jsonResponse(['status' => 'error', 'message' => 'عذراً، هذا المعرف موجود مسبقاً'], 400);
+        $errorMsg = $e->getMessage();
+        // Check for duplicate entry
+        if (strpos($errorMsg, 'Duplicate entry') !== false || strpos($errorMsg, '1062') !== false) {
+            jsonResponse(['status' => 'error', 'message' => 'عذراً، هذا المعرف موجود مسبقاً. يرجى استخدام معرف آخر أو تركه فارغاً للتوليد التلقائي'], 400);
+        } else {
+            jsonResponse(['status' => 'error', 'message' => 'خطأ في قاعدة البيانات: ' . $errorMsg], 500);
+        }
     }
 }
 elseif ($action === 'edit' && $method === 'POST') {
