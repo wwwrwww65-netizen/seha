@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الموقع متوقف - صيانة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Dark background effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(52, 152, 219, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(155, 89, 182, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .maintenance-wrapper {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Warning Icon */
+        .warning-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 10px 40px rgba(231, 76, 60, 0.3),
+                0 0 0 10px rgba(231, 76, 60, 0.1),
+                0 0 0 20px rgba(231, 76, 60, 0.05);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 
+                    0 10px 40px rgba(231, 76, 60, 0.3),
+                    0 0 0 10px rgba(231, 76, 60, 0.1),
+                    0 0 0 20px rgba(231, 76, 60, 0.05);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 
+                    0 15px 50px rgba(231, 76, 60, 0.4),
+                    0 0 0 15px rgba(231, 76, 60, 0.15),
+                    0 0 0 25px rgba(231, 76, 60, 0.08);
+            }
+        }
+
+        .warning-icon svg {
+            width: 60px;
+            height: 60px;
+            fill: white;
+        }
+
+        /* Page Title */
+        .page-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-align: center;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Maintenance Card */
+        .maintenance-card {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 22px;
+            padding: 36px 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .message-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ecf0f1;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        .info-box p {
+            color: #bdc3c7;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-box strong {
+            color: #3498db;
+            font-weight: 700;
+        }
+
+        /* Loading Animation */
+        .loading-dots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .loading-dots span {
+            width: 12px;
+            height: 12px;
+            background: #3498db;
+            border-radius: 50%;
+            animation: bounce 1.4s ease-in-out infinite;
+        }
+
+        .loading-dots span:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .loading-dots span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        @keyframes bounce {
+            0%, 80%, 100% {
+                transform: scale(0);
+                opacity: 0.5;
+            }
+            40% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .warning-icon {
+                width: 90px;
+                height: 90px;
+            }
+
+            .warning-icon svg {
+                width: 45px;
+                height: 45px;
+            }
+
+            .maintenance-card {
+                padding: 28px 24px;
+            }
+
+            .message-text {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.6rem;
+            }
+
+            .maintenance-wrapper {
+                gap: 20px;
+            }
+
+            .maintenance-card {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="maintenance-wrapper">
+        <!-- Warning Icon -->
+        <div class="warning-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2L1 21h22L12 2zm0 4.5L19.5 19h-15L12 6.5zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z"/>
+            </svg>
+        </div>
+
+        <!-- Page Title -->
+        <h1 class="page-title">الموقع متوقف مؤقتاً</h1>
+
+        <!-- Maintenance Card -->
+        <div class="maintenance-card">
+            <div class="status-badge">⚠️ وضع الإطفاء</div>
+
+            <p class="message-text">
+                تم إيقاف الموقع ولوحة التحكم بشكل مؤقت
+            </p>
+
+            <div class="info-box">
+                <p><strong>الحالة:</strong> الموقع في وضع الإطفاء الكامل</p>
+                <p><strong>الميزات المتوقفة:</strong></p>
+                <p>• الموقع الرئيسي</p>
+                <p>• لوحة التحكم</p>
+                <p>• جميع الخدمات</p>
+                <p>• نظام الاستعلامات</p>
+            </div>
+
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
