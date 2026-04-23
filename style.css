@@ -956,7 +956,7 @@ body {
    RESULT SECTION
 ======================== */
 .result-wrapper {
-    background-color: #f8f9fb;
+    background-color: #f9fafa;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
     padding: 10px 20px 10px;
@@ -965,12 +965,15 @@ body {
 }
 
 .result-item {
-    margin-bottom: 35px;
+    margin-bottom: 8px;
     text-align: center;
+    padding-bottom: 8px;
 }
 
 .result-item:last-child {
     margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .result-label {
@@ -978,7 +981,7 @@ body {
     font-weight: 700;
     font-size: 16.5px;
     color: #333;
-    margin-bottom: 24px;
+    margin-bottom: 4px;
 }
 
 .result-value {

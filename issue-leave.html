@@ -428,7 +428,8 @@
                     document.getElementById('companion-name').value = leave.companion || '';
                     document.getElementById('relation').value = leave.relation || '';
                     
-                    document.getElementById('leave-id').readOnly = true;
+                    // السماح بتعديل رقم الإجازة حتى في وضع التعديل
+                    document.getElementById('leave-id').readOnly = false;
                 }
                 } catch(e) {}
             }
@@ -436,10 +437,14 @@
             // ------ 3. Save Data ------
             document.getElementById("save-btn").addEventListener("click", async () => {
                 let passedId = document.getElementById('leave-id').value.trim();
-                // Because checking existence requires a round trip, we rely on the backend to throw an error on duplicate IDs.
+                
+                // تخزين الـ ID الأصلي عند التعديل
+                const urlParams = new URLSearchParams(window.location.search);
+                const editId = urlParams.get('id');
 
                 const leaveData = {
                     id: passedId,
+                    oldId: editId || passedId, // الـ ID الأصلي للتعديل
                     type: document.getElementById('leave-type').value,
                     name: document.getElementById('full-name').value,
                     fullName: document.getElementById('full-name').value,

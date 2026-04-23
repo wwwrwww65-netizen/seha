@@ -120,7 +120,8 @@ const DB = {
     },
 
     async saveLeave(leaveData) {
-        const action = leaveData.id ? 'edit' : 'add';
+        // تحديد الإجراء: تعديل إذا كان هناك oldId، إضافة إذا لم يكن هناك id
+        const action = leaveData.oldId ? 'edit' : (leaveData.id ? 'add' : 'add');
         const res = await fetch(API_BASE + 'leaves.php?action=' + action, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

@@ -14,23 +14,24 @@
         @keyframes spin { to { transform: rotate(360deg); } }
 
         /* Header */
-        .dashboard-header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 0 40px; display: flex; justify-content: space-between; align-items: center; height: 70px; position: sticky; top: 0; z-index: 100; }
-        .header-nav { display: flex; gap: 30px; height: 100%; }
-        .nav-link { text-decoration: none; color: #666; font-weight: 600; font-size: 1.05rem; display: flex; align-items: center; height: 100%; border-bottom: 3px solid transparent; transition: all 0.2s; cursor: pointer; }
+        .dashboard-header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 70px; position: sticky; top: 0; z-index: 100; }
+        .header-nav { display: flex; gap: 20px; height: 100%; }
+        .nav-link { text-decoration: none; color: #666; font-weight: 600; font-size: 1rem; display: flex; align-items: center; height: 100%; border-bottom: 3px solid transparent; transition: all 0.2s; cursor: pointer; white-space: nowrap; }
         .nav-link:hover { color: #2ab6cc; }
         .nav-link.active { color: #2ab6cc; border-bottom-color: #2ab6cc; }
 
-        .header-actions { display: flex; align-items: center; gap: 15px; }
-        .btn-new { background: linear-gradient(90deg, #1fc8dc 0%, #17afc3 100%); color: #fff; text-decoration: none; padding: 8px 20px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(23, 175, 195, 0.25); transition: opacity 0.2s, transform 0.1s; }
+        .header-actions { display: flex; align-items: center; gap: 12px; }
+        .btn-new { background: linear-gradient(90deg, #1fc8dc 0%, #17afc3 100%); color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(23, 175, 195, 0.25); transition: opacity 0.2s, transform 0.1s; white-space: nowrap; }
         .btn-new:hover { opacity: 0.9; transform: translateY(-1px); }
+        .btn-new span { display: inline; }
 
         /* Main Content */
-        .main-container { padding: 40px; max-width: 1300px; margin: 0 auto; }
-        .page-title { font-size: 1.8rem; font-weight: 800; color: #1a202c; margin-bottom: 20px; }
+        .main-container { padding: 30px 20px; max-width: 1300px; margin: 0 auto; }
+        .page-title { font-size: 1.5rem; font-weight: 800; color: #1a202c; margin-bottom: 20px; }
 
         /* Controls / Filters */
-        .controls-bar { background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); display: flex; gap: 15px; align-items: center; }
-        .search-input { flex: 1; padding: 10px 15px; border: 1px solid #e0eaf4; border-radius: 8px; background: #fcfcfc; font-family: inherit; font-size: 0.95rem; outline: none; transition: border 0.3s; }
+        .controls-bar { background: #fff; padding: 16px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .search-input { flex: 1; min-width: 200px; padding: 10px 14px; border: 1px solid #e0eaf4; border-radius: 8px; background: #fcfcfc; font-family: inherit; font-size: 0.9rem; outline: none; transition: border 0.3s; }
         .search-input:focus { border-color: #2ab6cc; }
 
         /* Table */
@@ -82,7 +83,240 @@
 
         .empty-state { text-align: center; padding: 40px; color: #718096; font-weight: 600; }
         
-        @media (max-width: 800px) { .settings-grid { grid-template-columns: 1fr; } }
+        /* ========================
+           RESPONSIVE - TABLET
+        ======================== */
+        @media (max-width: 1024px) {
+            .dashboard-header {
+                padding: 0 16px;
+            }
+            
+            .header-nav {
+                gap: 16px;
+            }
+            
+            .nav-link {
+                font-size: 0.9rem;
+            }
+            
+            .btn-new span {
+                display: none;
+            }
+            
+            .btn-new {
+                padding: 8px 12px;
+            }
+            
+            .main-container {
+                padding: 24px 16px;
+            }
+            
+            .page-title {
+                font-size: 1.3rem;
+            }
+            
+            th, td {
+                padding: 12px 14px;
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* ========================
+           RESPONSIVE - MOBILE
+        ======================== */
+        @media (max-width: 768px) {
+            .dashboard-header {
+                height: auto;
+                min-height: 60px;
+                padding: 12px 16px;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            
+            .header-nav {
+                order: 2;
+                width: 100%;
+                justify-content: center;
+                gap: 12px;
+                padding-top: 8px;
+                border-top: 1px solid #edf2f7;
+            }
+            
+            .header-actions {
+                order: 1;
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-link {
+                font-size: 0.85rem;
+                padding: 8px 4px;
+            }
+            
+            .btn-new {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+            
+            #current-username-display {
+                font-size: 0.8rem;
+            }
+            
+            #logout-btn {
+                font-size: 0.8rem;
+            }
+            
+            .main-container {
+                padding: 16px 12px;
+            }
+            
+            .page-title {
+                font-size: 1.1rem;
+                margin-bottom: 16px;
+            }
+            
+            .controls-bar {
+                padding: 12px;
+                gap: 10px;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-input {
+                min-width: 100%;
+                font-size: 0.85rem;
+            }
+            
+            .controls-bar button {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            /* تحويل الجدول إلى بطاقات في الجوال */
+            .table-container {
+                overflow-x: visible;
+            }
+            
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            
+            thead {
+                display: none;
+            }
+            
+            tbody tr {
+                margin-bottom: 16px;
+                border: 1px solid #edf2f7;
+                border-radius: 12px;
+                padding: 16px;
+                background: #fafbfc;
+            }
+            
+            tbody tr:hover {
+                background: #f7fafc;
+            }
+            
+            td {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 0;
+                border-bottom: 1px solid #edf2f7;
+                font-size: 0.85rem;
+            }
+            
+            td:last-child {
+                border-bottom: none;
+                padding-top: 14px;
+            }
+            
+            td:first-child {
+                display: none;
+            }
+            
+            td::before {
+                content: attr(data-label);
+                font-weight: 700;
+                color: #4a5568;
+                margin-left: 12px;
+                white-space: nowrap;
+            }
+            
+            .action-btns {
+                width: 100%;
+                justify-content: center;
+                gap: 12px;
+            }
+            
+            .btn-action {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .settings-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .settings-card {
+                padding: 20px 16px;
+            }
+            
+            .user-item {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+            
+            .user-item .action-btns {
+                width: 100%;
+                justify-content: flex-end;
+            }
+        }
+        
+        /* ========================
+           RESPONSIVE - SMALL MOBILE
+        ======================== */
+        @media (max-width: 480px) {
+            .dashboard-header {
+                padding: 10px 12px;
+            }
+            
+            .header-nav {
+                gap: 8px;
+            }
+            
+            .nav-link {
+                font-size: 0.8rem;
+            }
+            
+            .btn-new {
+                padding: 6px 8px;
+            }
+            
+            .main-container {
+                padding: 12px 8px;
+            }
+            
+            .page-title {
+                font-size: 1rem;
+            }
+            
+            tbody tr {
+                padding: 12px;
+            }
+            
+            td {
+                font-size: 0.8rem;
+                padding: 8px 0;
+            }
+            
+            td::before {
+                font-size: 0.8rem;
+                margin-left: 8px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -279,17 +513,17 @@
                     const tr = document.createElement('tr');
                     tr.innerHTML = `
                         <td style="text-align: center;">${hasDelete ? `<input type="checkbox" class="row-checkbox" value="${leave.id}">` : ''}</td>
-                        <td style="font-weight:700; color:#2ab6cc;">${leave.id || '-'}</td>
-                        <td>${leave.name || '-'}</td>
-                        <td>${leave.idNumber || '-'}</td>
-                        <td><span style="font-size: 0.8rem; background: ${leave.type === 'government' ? '#e2e8f0' : '#d4f2ff'}; padding: 3px 8px; border-radius: 12px; color: #4a5568;">${leave.type === 'government' ? 'حكومي' : 'خاص'}</span></td>
-                        <td>${leave.reportDate || '-'}</td>
-                        <td>${leave.startDate || '-'}</td>
-                        <td>${leave.endDate || '-'}</td>
-                        <td>${leave.doctor || '-'}</td>
-                        <td>${leave.job || '-'}</td>
-                        <td>${leave.companion || '-'}</td>
-                        <td>${leave.relation || '-'}</td>
+                        <td data-label="رمز الخدمة" style="font-weight:700; color:#2ab6cc;">${leave.id || '-'}</td>
+                        <td data-label="الاسم">${leave.name || '-'}</td>
+                        <td data-label="الهوية">${leave.idNumber || '-'}</td>
+                        <td data-label="نوع الإجازة"><span style="font-size: 0.8rem; background: ${leave.type === 'government' ? '#e2e8f0' : '#d4f2ff'}; padding: 3px 8px; border-radius: 12px; color: #4a5568;">${leave.type === 'government' ? 'حكومي' : 'خاص'}</span></td>
+                        <td data-label="تاريخ الإصدار">${leave.reportDate || '-'}</td>
+                        <td data-label="تبدأ من">${leave.startDate || '-'}</td>
+                        <td data-label="و حتى">${leave.endDate || '-'}</td>
+                        <td data-label="اسم الطبيب">${leave.doctor || '-'}</td>
+                        <td data-label="الوظيفة">${leave.job || '-'}</td>
+                        <td data-label="المرافق">${leave.companion || '-'}</td>
+                        <td data-label="القرابة">${leave.relation || '-'}</td>
                         <td>
                             <div class="action-btns">
                                 ${hasEdit ? `
